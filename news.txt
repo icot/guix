@@ -1,0 +1,5 @@
+(channel-news
+  (version 0)
+  (entry (commit "908df8e5c20fbfc9f033fa8b2b4e4db9e2c887ca")
+         (title (en "First commit. Empty channel"))
+         (body (en "Nothing here yet"))))
