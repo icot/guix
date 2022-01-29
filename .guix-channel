@@ -1,1 +1,3 @@
-(channel (version 0) (news-file "news.txt"))
+(channel
+  (version 0)
+  (directory "icot"))
