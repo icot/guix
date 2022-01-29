@@ -16,14 +16,14 @@
 ;;; You should have received a copy of the GNU General Public License
 ;;; along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
-(define-module (icot packages dotstow)
-  #:use-modules (guix packages)
-  #:use-modules (guix gexp)
-  #:use-modules (guix git-download)
-  #:use-modules (guix build-system guile)
-  #:use-modules (guix build-system copy)
-  #:use-modules (gnu packages guile)
-  #:use-modules (guix licenses))
+(define-module (dotstow)
+  #:use-module (guix packages)
+  #:use-module (guix gexp)
+  #:use-module (guix git-download)
+  #:use-module (guix build-system guile)
+  #:use-module (guix build-system copy)
+  #:use-module (gnu packages guile)
+  #:use-module (guix licenses))
 
 (define-public dotstow
   (package
