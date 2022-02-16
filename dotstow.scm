@@ -28,22 +28,21 @@
 (define-public dotstow
   (package
     (name "dotstow")
-    (version "0.3")
+    (version "0.31")
     (source
      (origin
        (method git-fetch)
-       (uri
-	(git-reference
-	 (url "https://github.com/icot/dotstow.git")
-	 (commit version)))
+       (uri (git-reference
+             (url "https://github.com/icot/dotstow.git")
+             (commit version)))
        (file-name (git-file-name name version))
-       (sha256 (base32 "1qdvgcchnk6r6v2kvw8ggbb5b19h97k9k6kk909lkppd2xs0sxw8"))))
+       (sha256 (base32 "0g4a12q6i86rxb3qpgzpfyw1s1vqsya12zl74zq3rz2q78smxnh3"))))
     (inputs
      (list guile-3.0))
     (build-system copy-build-system)
     (arguments
      '(#:install-plan
-       '(("dotstow.scm" "bin/dotstow"))))
+       '(("dotstow" "bin/"))))
     (synopsis "Personal dotfiles stow tool")
     (description "Like GNU STOW, more basic, with naive template support. Only for dotfiles")
     (home-page "https://github.com/icot/dotstow")
