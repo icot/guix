@@ -23,6 +23,7 @@
   #:use-module (guix build-system guile)
   #:use-module (guix build-system copy)
   #:use-module (gnu packages guile)
+  #:use-module (gnu packages racket)
   #:use-module (guix licenses))
 
 (define-public dotstow
@@ -44,6 +45,29 @@
      '(#:install-plan
        '(("dotstow" "bin/"))))
     (synopsis "Personal dotfiles stow tool")
+    (description "Like GNU STOW, more basic, with naive template support. Only for dotfiles")
+    (home-page "https://github.com/icot/dotstow")
+    (license gpl3+)))
+
+(define-public dotstow-rkt
+  (package
+    (name "dotstow-rkt")
+    (version "0.32")
+    (source
+     (origin
+       (method git-fetch)
+       (uri (git-reference
+             (url "https://github.com/icot/dotstow.git")
+             (commit version)))
+       (file-name (git-file-name name version))
+       (sha256 (base32 "02g71wx83g8rz6wp8lkg354nlhng8abl5cjqc3wg7h8q2zbfsq1h"))))
+    (inputs
+     (list racket))
+    (build-system copy-build-system)
+    (arguments
+     '(#:install-plan
+       '(("dotstow.rkt" "bin/"))))
+    (synopsis "Personal dotfiles stow tool. Racket implementation")
     (description "Like GNU STOW, more basic, with naive template support. Only for dotfiles")
     (home-page "https://github.com/icot/dotstow")
     (license gpl3+)))
